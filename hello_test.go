@@ -2,16 +2,24 @@ package main
 
 import "testing"
 
+// !danger
+// TODO that
 func TestHello(t *testing.T) {
 	t.Run("Say Hello to someone", func(t *testing.T) {
-		got := Hello("Marcelo")
+		got := Hello("Marcelo", "")
 		want := "Hello, Marcelo!"
 
 		AssertCorrectMessage(t, got, want)
 	})
 	t.Run("Say 'Hello, world!' if empty string is provided", func (t *testing.T) {
-		got := Hello("")
+		got := Hello("", "")
 		want := "Hello, World!"
+
+		AssertCorrectMessage(t, got, want)
+	})
+	t.Run("in Spanish", func(t *testing.T) {
+		got := Hello("Marcelo", "Spanish")
+		want := "Hola, Marcelo!"
 
 		AssertCorrectMessage(t, got, want)
 	})
