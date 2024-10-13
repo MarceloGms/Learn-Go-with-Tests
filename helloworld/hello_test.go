@@ -2,8 +2,6 @@ package main
 
 import "testing"
 
-// !danger
-// TODO that
 func TestHello(t *testing.T) {
 	t.Run("Say Hello to someone", func(t *testing.T) {
 		got := Hello("Marcelo", "")
